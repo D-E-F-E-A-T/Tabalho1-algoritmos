@@ -44,7 +44,6 @@ public class StringList {
             node = node.next;
 
             if(i+1 == position) {
-                System.out.println("remover " + node.next.element);
                 node.next = node.next.next;
             }
         }
@@ -63,16 +62,29 @@ public class StringList {
         }
     }
 
-    public String toString() {
-        StringBuilder string = new StringBuilder();
-        Node aux = header.next;
+    public String get_element(int index) {
+        Node node = header.next;
 
         for(int i = 0; i < count; i++) {
-            string.append(aux.element.toString());
-            string.append('\n');
-            aux = aux.next;
+            if(i == index) {
+                return node.element;
+            }
+
+            node = node.next;
         }
 
-        return string.toString();
+        return null;
+    }
+
+    public String[] to_array() {
+        Node node = header.next;
+        String array[] = new String[count];
+
+        for(int i = 0; i < count; i++) {
+            array[i] = node.element;
+            node = node.next;
+        }
+
+        return array;
     }
 }

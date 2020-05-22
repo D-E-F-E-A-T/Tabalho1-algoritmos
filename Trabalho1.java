@@ -15,11 +15,17 @@ class Trabalho1 {
         return op;
     }
 
+    public static void remove_stop(File book) {
+        File stops = new File("stopwords.txt");
+        String stopwords[] = stops.getArray();
+
+        int lenght = book.getWordsCount();
+        StringList words = book.getwords();
+    }
+
     public static void main(String[] args){
         File book = new File(args[0]);
 
-        StringList words = book.getwords();
 
-        words.removeNodeIn(4);
     }
 }

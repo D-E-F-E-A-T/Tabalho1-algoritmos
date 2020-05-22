@@ -3,7 +3,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class File{
-    private StringList lines = new StringList();
     private StringList words = new StringList();
     private String path = null;
 
@@ -31,16 +30,12 @@ public class File{
         }
     }
 
-    public int getLinesCount() {
-        return lines.count;
-    }
-
     public int getWordsCount() {
         return words.count;
     }
 
-    public String toString() {
-        return lines.toString();
+    public String[] getArray() {
+        return words.to_array();
     }
 
     public StringList getwords() {
